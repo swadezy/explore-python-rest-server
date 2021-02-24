@@ -1,44 +1,14 @@
 # Python REST API Server
 
-Now that you have a handle on basic syntax, we're going to look more closely at how to apply that to making a server-side REST API that connects to a database. We will to build our server side in our new language, while our front-end client continues to be JavaScript.
+This project is a (very) basic python app using flask.  The hello.py file splats your classic 'hello world' onto the DOM at '/', uses a rendered template that is mildly styled and accesses the static .css file at '/hello', and requests made to '/login' are parsed out to access the body of the requests or params / args, depending on the method.
 
-## Objectives
+The config.py and connect.py files use psycopg2 to contact a database.  The information for db setup can be found in the database.sql file; it's a slice of the db from my solo project.  This can be accessed by running 'python3 connect.py' in console.
 
-  - explore server side frameworks for a new language
-  - create a REST API in a new language
-  - connect to and utilize a postgres database in a new language
-  - document and share what you've learned in GitHub readme
+Most of the action here shows on the python/flask server console.  Requests to /login and the database don't do anything on client side, all just in the server console.
 
-## Web Stuff
+I found these resources especially helpful when working on this -
+https://flask.palletsprojects.com/en/1.1.x/
+https://www.learnpython.org/en/Welcome
+https://pypi.org/project/psycopg2/
 
-Most programming languages aren't designed just to work on the web. 
-
-While a simple command line Hello World is a great first step, getting a web application up is generally requires some extra libraries or packages. This is similar to like JavaScript requires Node and something like Express to run server-side. 
-
-While there are generally many options for how to do this, we suggest you take a look at [Flask](http://flask.pocoo.org/)
-
-Look for tutorials that help you to build a REST API. Specifically you'll need to know how to:
-
- - Make GET/POST/PUT/Delete requests
- - Get data from a POST body
- - Use parameters to send an id with PUT/DELETE
- 
- > Focus on the server code, using Postman for testing your routes. 
-
-
-## Databases
-
-The last thing that we'll need to do is work with a database. Look for tutorials that show you how to connect to a Postgres database in your assigned language. Some tutorials will use an ORM (Object Relational Mapping) library. These are great tools to build some experience with.
-
-Take a look at `psycopg2` for DB connection and queries.
-
-Try to connect to a database and get some data. Use an existing database from an old class project, or create a simple database with a single table. 
-
-
-## GitHub
-
-Create a GitHub repository to share your basic API & database example. Make sure to comment the code to help others understand what is going on. Also include a Readme file with information on how to setup the database and run the project. You should also note any tutorials or resources you found helpful in the Readme.
-
-When you are done, complete the assignment on the portal with your GitHub repo. 
-
-
+Although my main takeaway was that I need to remember that I'm running python3 and pip3, so I can't just run 'python connect.py' or 'pip install etc' in the command line...
